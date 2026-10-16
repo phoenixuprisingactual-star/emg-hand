@@ -1,4 +1,4 @@
-// test_emg_control.cpp — host simulation tests for the EMG claw control logic.
+// test_emg_control.cpp - host simulation tests for the EMG claw control logic.
 //
 // Compiles the SAME emg_control.h that ships in the Arduino sketch and runs
 // it against synthetic MyoWare ENV traces (rest noise, light/hard flex
