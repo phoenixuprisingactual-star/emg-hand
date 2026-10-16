@@ -17,6 +17,17 @@ verification step, not a formality. No part of this firmware has run on the
 real MyoWare, Uno, or servos. This banner must be re-earned after board day;
 do not carry it forward on faith.
 
+## Repository map
+
+| Path | What it is |
+|---|---|
+| `emg_claw/` | Phase 1 firmware sketch + control logic |
+| `sim/` | Host simulation tests for the control logic |
+| `board_smoke/` | Board-only smoke test (Uno + PCA9685, before any servo) |
+| `claw-control-design-2026-10-11.md` | Phase 1 control design decisions |
+| `wiring-schematic.html` | Wiring schematic (DRAFT, design review only) |
+| `tripod_claw_gen.py` / `tripod_claw_v1.stl` | Draft tripod claw geometry (untested) |
+
 ## Files
 
 | File | What it is |
