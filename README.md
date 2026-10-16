@@ -1,4 +1,8 @@
-# EMG Hand — Phase 1 Firmware
+# EMG Hand - Phase 1 Firmware
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![Design license: CERN-OHL-S v2](https://img.shields.io/badge/Design_license-CERN--OHL--S_v2-orange.svg)](LICENSE-design.txt)
+[![Tests](https://img.shields.io/badge/tests-host_simulation_passing-brightgreen.svg)](sim/)
 
 **Status (2026-10-15): SKELETON, simulation-tested, NOT hardware-validated.**
 A solo hobby build, shared publicly in case it is useful to other builders.
@@ -35,7 +39,7 @@ do not carry it forward on faith.
 |---|---|
 | `emg_claw/emg_claw.ino` | Arduino sketch: sampling, calibration prompts, servo driving, telemetry |
 | `emg_claw/emg_control.h` | All control logic (state machine, thresholds, calibration math). No Arduino dependencies; the sim tests compile this exact file |
-| `sim/test_emg_control.cpp` | Host tests: synthetic ENV traces — rest noise, flex plateaus, threshold chatter, calibration success/failure, rail fault, slew limit, angle clamp |
+| `sim/test_emg_control.cpp` | Host tests: synthetic ENV traces - rest noise, flex plateaus, threshold chatter, calibration success/failure, rail fault, slew limit, angle clamp |
 | `sim/run_tests.sh` | Builds and runs the tests (`g++ -std=c++17`) |
 
 ## Design (from `claw-control-design-2026-10-11.md`)
@@ -52,7 +56,7 @@ Chatter control is hysteresis only. There is deliberately **no** reject gate
 and **no** majority-vote window: that safety layer costs ~1.95 s of latency
 and buys multi-gesture reliability Phase 1 does not need.
 
-## Wiring assumptions (from `wiring-schematic.html` — do not improvise)
+## Wiring assumptions (from `wiring-schematic.html` - do not improvise)
 
 - MyoWare 2 + Link Shield: output select switch → **ENV**, ENV → **A0** via
   TRS tip (ring = 5 V, sleeve = GND). MyoWare powered from Arduino 5 V.
@@ -66,9 +70,9 @@ and buys multi-gesture reliability Phase 1 does not need.
 
 ## Calibration (runs at every boot, ~4 s)
 
-1. `# CALIBRATION: relax your arm completely...` — baseline = average A0
+1. `# CALIBRATION: relax your arm completely...` - baseline = average A0
    for 2 s (the schematic's definition, verbatim).
-2. `# CALIBRATION: flex HARD and hold...` — 2 s capture; the peak of the
+2. `# CALIBRATION: flex HARD and hold...` - 2 s capture; the peak of the
    smoothed envelope sets the top of the dynamic range.
 3. Thresholds are placed at fractions of (flexPeak − baseline). If the range
    is too small, calibration **fails**, default thresholds are kept, and the
@@ -85,7 +89,7 @@ baseline ≥ 5) raises a fault and releases the claw to the open angle.
 Servo motion is slew-rate limited and hard-clamped to
 `servoMinAngle..servoMaxAngle`.
 
-## Placeholder values — ALL must be replaced by measurement
+## Placeholder values - ALL must be replaced by measurement
 
 | Value | Placeholder | Replace when |
 |---|---|---|
