@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>EMG Hand — Wiring Schematic</title>
+<title>EMG Hand - Wiring Schematic</title>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:-apple-system,'Segoe UI',Roboto,sans-serif;background:#0E1114;color:#E8ECEF;padding:24px;line-height:1.5}
@@ -28,12 +28,12 @@ code{background:#232A31;padding:2px 7px;border-radius:4px;font-size:13px;color:#
 </style>
 </head>
 <body>
-<h1>EMG Hand — Wiring Schematic</h1>
+<h1>EMG Hand - Wiring Schematic</h1>
 <div class="sub">Arduino Uno &middot; MyoWare 2 + Link Shield &middot; PCA9685 Servo Driver &middot; 5&times; SG90 &middot; Dual-rail power</div>
 
-<div class="note draft"><b>DRAFT 2026-10-10 — design review only.</b> Nothing has been physically built or tested. Every connection below was checked against the MyoWare 2 specs, Arduino Uno R3 pinout, PCA9685 module docs, and SG90 datasheet during the parts-list verification passes. Build in the staged order and test each stage before wiring the next.</div>
+<div class="note draft"><b>DRAFT 2026-10-10 - design review only.</b> Nothing has been physically built or tested. Every connection below was checked against the MyoWare 2 specs, Arduino Uno R3 pinout, PCA9685 module docs, and SG90 datasheet during the parts-list verification passes. Build in the staged order and test each stage before wiring the next.</div>
 
-<div class="note warn"><b>Two separate power rails — non-negotiable.</b> The Arduino (USB/battery) powers logic + the MyoWare. The 5V/3A wall adapter powers <b>only</b> the servos via the PCA9685 screw terminal. The two grounds MUST be tied together (see the GND bus). Powering 5 servos from the Arduino 5V pin will brown-out or damage the board — 1.8A stall vs 400mA limit.</div>
+<div class="note warn"><b>Two separate power rails - non-negotiable.</b> The Arduino (USB/battery) powers logic + the MyoWare. The 5V/3A wall adapter powers <b>only</b> the servos via the PCA9685 screw terminal. The two grounds MUST be tied together (see the GND bus). Powering 5 servos from the Arduino 5V pin will brown-out or damage the board - 1.8A stall vs 400mA limit.</div>
 
 <div class="legend">
 <span><span class="sw" style="background:#E5484D"></span> 5V power</span>
@@ -48,7 +48,7 @@ code{background:#232A31;padding:2px 7px;border-radius:4px;font-size:13px;color:#
 <!-- ============ ARDUINO UNO ============ -->
 <rect x="30" y="30" width="230" height="200" rx="8" fill="#1B2E4A" stroke="#4D9DE0" stroke-width="1.5"/>
 <text x="145" y="55" text-anchor="middle" fill="#fff" font-size="14" font-weight="700">Arduino Uno</text>
-<text x="145" y="72" text-anchor="middle" fill="#8A949C" font-size="11">(clone — CH340 driver on Windows)</text>
+<text x="145" y="72" text-anchor="middle" fill="#8A949C" font-size="11">(clone - CH340 driver on Windows)</text>
 <text x="145" y="90" text-anchor="middle" fill="#8A949C" font-size="11">5V logic · USB powered</text>
 <rect x="45" y="105" width="70" height="22" rx="4" fill="#14181D" stroke="#E5484D" stroke-width="1"/>
 <text x="80" y="120" text-anchor="middle" fill="#E5484D" font-size="11">5V</text>
@@ -75,7 +75,7 @@ code{background:#232A31;padding:2px 7px;border-radius:4px;font-size:13px;color:#
 <text x="145" y="400" text-anchor="middle" fill="#5A646D" font-size="10">tip = ENV · ring = 5V · sleeve = GND</text>
 <text x="145" y="416" text-anchor="middle" fill="#F2B320" font-size="10">⚠ verify with multimeter first</text>
 <text x="145" y="432" text-anchor="middle" fill="#E5484D" font-size="10">power switch → ON · output select → ENV</text>
-<text x="145" y="446" text-anchor="middle" fill="#5A646D" font-size="10">draws &lt;14mA — safe on Arduino 5V</text>
+<text x="145" y="446" text-anchor="middle" fill="#5A646D" font-size="10">draws &lt;14mA - safe on Arduino 5V</text>
 
 <!-- ============ BATTERY BANK ============ -->
 <rect x="30" y="500" width="230" height="100" rx="8" fill="#2E2A1B" stroke="#F2C230" stroke-width="1.5"/>
@@ -168,7 +168,7 @@ code{background:#232A31;padding:2px 7px;border-radius:4px;font-size:13px;color:#
 
 <!-- GND bus highlight -->
 <rect x="280" y="640" width="440" height="36" rx="6" fill="#1A1F25" stroke="#8A949C" stroke-width="1" stroke-dasharray="6,4"/>
-<text x="500" y="663" text-anchor="middle" fill="#8A949C" font-size="12">Ⓖ COMMON GROUND BUS — Arduino GND = PCA9685 GND = servo PSU (−) — tie all three, no exceptions</text>
+<text x="500" y="663" text-anchor="middle" fill="#8A949C" font-size="12">Ⓖ COMMON GROUND BUS - Arduino GND = PCA9685 GND = servo PSU (−) - tie all three, no exceptions</text>
 </svg>
 </div>
 
@@ -179,35 +179,35 @@ code{background:#232A31;padding:2px 7px;border-radius:4px;font-size:13px;color:#
 <tr><td>Arduino GND</td><td>PCA9685 GND</td><td>grey</td><td>Part of the common ground bus.</td></tr>
 <tr><td>Arduino A4</td><td>PCA9685 SDA</td><td>purple</td><td>I2C data. Addr 0x40.</td></tr>
 <tr><td>Arduino A5</td><td>PCA9685 SCL</td><td>purple (dashed)</td><td>I2C clock.</td></tr>
-<tr><td>Arduino 5V</td><td>MyoWare VIN (TRS ring)</td><td>red</td><td>MyoWare draws &lt;14mA — safe.</td></tr>
+<tr><td>Arduino 5V</td><td>MyoWare VIN (TRS ring)</td><td>red</td><td>MyoWare draws &lt;14mA - safe.</td></tr>
 <tr><td>Arduino GND</td><td>MyoWare GND (TRS sleeve)</td><td>grey</td><td>Sensor ground reference.</td></tr>
 <tr><td>Arduino A0</td><td>MyoWare ENV (TRS tip)</td><td>mint</td><td>0–5V envelope → ADC 0–1023.</td></tr>
-<tr><td>USB battery bank</td><td>Arduino USB port</td><td>blue</td><td>Safer than mains PC during skin-contact tests. (Port type varies by clone — B, C, or mini.)</td></tr>
-<tr><td>5V/3A adapter (+)</td><td>PCA9685 V+ screw terminal</td><td>red, thick</td><td>Servo rail. 1.8A worst-case, 3A supply. Use a properly isolated, listed supply (UL/CE) — not a counterfeit; its output ground is tied to the body circuit.</td></tr>
-<tr><td>5V/3A adapter (−)</td><td>PCA9685 GND screw terminal</td><td>grey, thick</td><td>Tied to Arduino GND — common ground bus.</td></tr>
+<tr><td>USB battery bank</td><td>Arduino USB port</td><td>blue</td><td>Safer than mains PC during skin-contact tests. (Port type varies by clone - B, C, or mini.)</td></tr>
+<tr><td>5V/3A adapter (+)</td><td>PCA9685 V+ screw terminal</td><td>red, thick</td><td>Servo rail. 1.8A worst-case, 3A supply. Use a properly isolated, listed supply (UL/CE) - not a counterfeit; its output ground is tied to the body circuit.</td></tr>
+<tr><td>5V/3A adapter (−)</td><td>PCA9685 GND screw terminal</td><td>grey, thick</td><td>Tied to Arduino GND - common ground bus.</td></tr>
 <tr><td>470µF capacitor (+)</td><td>V+ screw terminal</td><td>red, dashed</td><td>16V rating (10V min). Absorbs stall transients. Stripe → GND.</td></tr>
 <tr><td>470µF capacitor (−)</td><td>GND screw terminal</td><td>grey, dashed</td><td>Observe polarity or it vents.</td></tr>
 <tr><td>PCA9685 Ch 0–4</td><td>Servo signal (orange/yellow)</td><td>yellow</td><td>Thumb=0, Index=1, Middle=2, Ring=3, Pinky=4. <b>Read the silkscreen:</b> brown wire → GND pin, red → V+, orange → signal. Backwards = PWM output shorted to ground.</td></tr>
-<tr><td>PCA9685 OE pin</td><td>GND</td><td>jumper</td><td>Only if present and floating — outputs stay disabled otherwise. Most modules pull it low already.</td></tr>
-<tr><td>PCA9685 servo + rail</td><td>Servo red wire</td><td>—</td><td>Powered from V+ terminal, not Arduino.</td></tr>
-<tr><td>PCA9685 servo − rail</td><td>Servo brown wire</td><td>—</td><td>Returns to common ground.</td></tr>
+<tr><td>PCA9685 OE pin</td><td>GND</td><td>jumper</td><td>Only if present and floating - outputs stay disabled otherwise. Most modules pull it low already.</td></tr>
+<tr><td>PCA9685 servo + rail</td><td>Servo red wire</td><td>-</td><td>Powered from V+ terminal, not Arduino.</td></tr>
+<tr><td>PCA9685 servo − rail</td><td>Servo brown wire</td><td>-</td><td>Returns to common ground.</td></tr>
 </table>
 
 <div class="sec">Staged build order</div>
 <table>
 <tr><th>Stage</th><th>Wire up</th><th>Test</th></tr>
-<tr><td><b>1 — Signal chain</b></td><td>Arduino + MyoWare. Power via USB.</td><td>Serial monitor: flex forearm, watch A0 values swing. Run the 2-second baseline calibration (average A0 for 2 s at startup = resting baseline; flex threshold = baseline + margin). Confirm resting vs flexed separation. If A0 barely moves, turn the MyoWare gain pot clockwise with a small screwdriver.<br><b>Safety:</b> use a <b>laptop on battery power</b> (charger unplugged) for serial monitoring — no mains ground path. On a desktop PC, either use a USB isolator or skip serial and debug via the onboard LED instead.</td></tr>
-<tr><td><b>2 — Proof of concept</b></td><td>Add PCA9685 + ONE servo on Ch 0. Connect the 5V/3A adapter to the V+ screw terminal (verify polarity with multimeter first — center-positive). Tie PSU (−) to Arduino GND.</td><td>Flex → servo sweeps. Code needs the <b>Adafruit_PWMServoDriver</b> library; set the PWM frequency to <b>50 Hz</b> — servos jitter at the chip's ~200 Hz default. Confirms the full EMG→motion path before committing to 5 servos.</td></tr>
-<tr><td><b>3 — Full hand drive</b></td><td>Add remaining 4 servos + 470µF cap. Verify common ground with multimeter (continuity between Arduino GND pin and PSU −).</td><td>All 5 channels respond. Stall-test one servo briefly — measure at the V+ screw terminal, supply must not sag below ~4.6V.</td></tr>
-<tr><td><b>4 — Mechanics</b></td><td>Mount servos, thread tendon lines, attach to 3D-printed hand (Phase 2).</td><td>Clamp servo angles in software to the hand's measured range before first full close.</td></tr>
+<tr><td><b>1 - Signal chain</b></td><td>Arduino + MyoWare. Power via USB.</td><td>Serial monitor: flex forearm, watch A0 values swing. Run the 2-second baseline calibration (average A0 for 2 s at startup = resting baseline; flex threshold = baseline + margin). Confirm resting vs flexed separation. If A0 barely moves, turn the MyoWare gain pot clockwise with a small screwdriver.<br><b>Safety:</b> use a <b>laptop on battery power</b> (charger unplugged) for serial monitoring - no mains ground path. On a desktop PC, either use a USB isolator or skip serial and debug via the onboard LED instead.</td></tr>
+<tr><td><b>2 - Proof of concept</b></td><td>Add PCA9685 + ONE servo on Ch 0. Connect the 5V/3A adapter to the V+ screw terminal (verify polarity with multimeter first - center-positive). Tie PSU (−) to Arduino GND.</td><td>Flex → servo sweeps. Code needs the <b>Adafruit_PWMServoDriver</b> library; set the PWM frequency to <b>50 Hz</b> - servos jitter at the chip's ~200 Hz default. Confirms the full EMG→motion path before committing to 5 servos.</td></tr>
+<tr><td><b>3 - Full hand drive</b></td><td>Add remaining 4 servos + 470µF cap. Verify common ground with multimeter (continuity between Arduino GND pin and PSU −).</td><td>All 5 channels respond. Stall-test one servo briefly - measure at the V+ screw terminal, supply must not sag below ~4.6V.</td></tr>
+<tr><td><b>4 - Mechanics</b></td><td>Mount servos, thread tendon lines, attach to 3D-printed hand (Phase 2).</td><td>Clamp servo angles in software to the hand's measured range before first full close.</td></tr>
 </table>
 
 <div class="note warn"><b>Before first power-on of Stage 3:</b> multimeter continuity check between Arduino GND pin and the 5V adapter's negative output. No beep = floating ground = servos will jitter or sit dead. Fix before proceeding.</div>
 
-<div class="note"><b>TRS cable warning:</b> wire colors inside cheap TRS cables are not standardized. Before connecting, use the multimeter to identify which conductor goes to tip, ring, and sleeve, then label them. Wrong order here puts 5V into the Arduino's analog input or shorts the sensor — check twice.</div>
+<div class="note"><b>TRS cable warning:</b> wire colors inside cheap TRS cables are not standardized. Before connecting, use the multimeter to identify which conductor goes to tip, ring, and sleeve, then label them. Wrong order here puts 5V into the Arduino's analog input or shorts the sensor - check twice.</div>
 
 <div class="note warn"><b>5V adapter polarity check:</b> before connecting the wall adapter to the PCA9685 screw terminal, verify with the multimeter that the plug is <b>center-positive</b>. A center-negative adapter wired backwards will destroy the PCA9685, reverse-bias the capacitor (vent/fire risk), and potentially kill every servo on the rail. Thirty seconds with the meter prevents all of it.</div>
 
-<div class="footer">EMG Hand — wiring schematic draft 2026-10-10 · matches parts-list.md rev. 2026-10-10</div>
+<div class="footer">EMG Hand - wiring schematic draft 2026-10-10 · matches parts-list.md rev. 2026-10-10</div>
 </body>
 </html>
