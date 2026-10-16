@@ -1,4 +1,4 @@
-// board_smoke.ino — EMG Hand board-only smoke test
+// board_smoke.ino - EMG Hand board-only smoke test
 // Purpose: verify the RobotShop Uno clone + PCA9685 BEFORE any servo,
 // MyoWare, or servo power rail exists on the bench.
 // It does three things and nothing else:
@@ -9,7 +9,7 @@
 // safe to run with the PCA9685 wired for logic power only.
 //
 // Wiring (from ../wiring-schematic.html, verified 2026-10-14):
-//   Uno 5V  -> PCA9685 VCC   (logic power only, ~10 mA — NOT servo power)
+//   Uno 5V  -> PCA9685 VCC   (logic power only, ~10 mA - NOT servo power)
 //   Uno GND -> PCA9685 GND
 //   Uno A4  -> PCA9685 SDA
 //   Uno A5  -> PCA9685 SCL
