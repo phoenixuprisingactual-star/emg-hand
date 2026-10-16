@@ -88,13 +88,11 @@ Servo motion is slew-rate limited and hard-clamped to
 ## Bench bring-up (aligns with the schematic's stage order)
 
 0. Prerequisite: install the **Arduino IDE** (free, arduino.cc → Software).
-   As of 2026-10-12 Renegade has not downloaded it yet; he installs it on
-   his Windows PC, then installs the **CH340 USB-serial driver** (his
-   RobotShop Uno clone uses a CH340 chip — without this driver the IDE
-   cannot see the board at all; see the datasheet walkthrough, section 3),
-   then installs the Adafruit PWM Servo Driver Library via
-   the IDE's Library Manager, then copies this `emg_claw/` folder over and
-   opens `emg_claw.ino`.
+   The Uno clone used in this build carries a **CH340 USB-serial chip**;
+   install the CH340 driver first, or the IDE will not see the board at
+   all. Then install the Adafruit PWM Servo Driver Library via the IDE's
+   Library Manager, copy this `emg_claw/` folder over, and open
+   `emg_claw.ino`.
 1. Compile in the Arduino IDE; fix any library/API issues there first.
 2. Set `BENCH_SINGLE_SERVO` to 1 in the sketch. Wire **one** servo on
    channel 0 with the 5 V rail per the schematic (multimeter polarity and
