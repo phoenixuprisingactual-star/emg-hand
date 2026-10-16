@@ -115,3 +115,13 @@ Servo motion is slew-rate limited and hard-clamped to
    470 µF cap per the schematic stage notes.
 5. Only after the hand's angle range is measured: set the clamp and state
    angles, then connect tendons.
+
+## Licensing
+
+- Source code (`emg_claw/`, `sim/`, `board_smoke/`, and
+  `tripod_claw_gen.py`) is licensed under the MIT License - see
+  `LICENSE`.
+- Hardware design files (`wiring-schematic.html`, `tripod_claw_v1.stl`,
+  and `claw-control-design-2026-10-11.md`) are licensed under the CERN
+  Open Hardware Licence Version 2 - Strongly Reciprocal (CERN-OHL-S
+  v2) - see `LICENSE-design.txt`.
