@@ -3,7 +3,7 @@
 // Pure C++ with no Arduino dependencies so the exact code that ships in the
 // sketch is exercised by the host simulation tests in ../sim/.
 //
-// Design source: ~/workspace/emg-hand/claw-control-design-2026-10-11.md
+// Design source: claw-control-design-2026-10-11.md (project design doc)
 //   Three states on ONE channel, two thresholds, no classifier:
 //     rest       -> claw OPEN
 //     light flex -> claw CLOSED
@@ -12,7 +12,7 @@
 //   reliability Phase 1 does not need, at ~2 s of latency Phase 1 rejects).
 //   Chatter control is hysteresis only.
 //
-// Hardware source: ~/workspace/emg-hand/wiring-schematic.html
+// Hardware source: wiring-schematic.html (project wiring schematic)
 //   MyoWare 2 ENV output -> Arduino A0 (0-5 V -> ADC 0..1023).
 //   Baseline = average A0 for 2 s at startup (schematic definition, verbatim).
 //
