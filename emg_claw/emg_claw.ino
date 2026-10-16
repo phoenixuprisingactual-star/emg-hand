@@ -1,6 +1,6 @@
 // emg_claw.ino — EMG Hand Phase 1 firmware skeleton.
 //
-// Target hardware (per ~/workspace/emg-hand/wiring-schematic.html):
+// Target hardware (per the project wiring schematic, wiring-schematic.html):
 //   Arduino Uno (clone) + MyoWare 2 with Link Shield (ENV -> A0)
 //   PCA9685 servo driver, I2C 0x40 (SDA=A4, SCL=A5), servo channels 0-4
 //   5x SG90 servos on the PCA9685 V+ rail (separate 5 V supply, common GND)
