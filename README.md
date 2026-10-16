@@ -3,9 +3,10 @@
 **Status (2026-10-15): SKELETON, simulation-tested, NOT hardware-validated.**
 A solo hobby build, shared publicly in case it is useful to other builders.
 Phase 1 is a one-channel EMG bench claw; a tendon-driven hand is the
-longer-term goal. Hardware state as of 2026-10-15: the controller board and
-servo driver are in hand, the EMG sensor and electrodes arrive Oct 16-17, so
-nothing in this repo has run on real hardware yet.
+longer-term goal. Hardware state as of 2026-10-15: the controller board,
+servo driver, and electrodes are in hand; the EMG sensor (MyoWare 2 +
+Link Shield) arrives Oct 17, so nothing in this repo has run on real
+hardware yet.
 What was checked, and when: the control logic (`emg_control.h`) was compiled
 with g++ and exercised by 9 host simulation cases / 33 checks, all passing, on
 2026-10-12. The Arduino sketch wrapper (`emg_claw.ino`) has **not** been
