@@ -9,9 +9,9 @@ nothing in this repo has run on real hardware yet.
 What was checked, and when: the control logic (`emg_control.h`) was compiled
 with g++ and exercised by 9 host simulation cases / 33 checks, all passing, on
 2026-10-12. The Arduino sketch wrapper (`emg_claw.ino`) has **not** been
-compiled yet: this machine could not download the Arduino AVR core (TLS
-failure to the package index), so the sketch's first compile happens in the
-Arduino IDE on Renegade's Windows PC. The sketch uses only documented
+compiled yet: the Arduino AVR core could not be downloaded in the
+host-test environment (TLS failure to the package index), so the sketch's
+first compile happens in the Arduino IDE. The sketch uses only documented
 Adafruit_PWMServoDriver calls, but treat the first IDE compile as a real
 verification step, not a formality. No part of this firmware has run on the
 real MyoWare, Uno, or servos. This banner must be re-earned after board day;
@@ -26,7 +26,7 @@ do not carry it forward on faith.
 | `sim/test_emg_control.cpp` | Host tests: synthetic ENV traces — rest noise, flex plateaus, threshold chatter, calibration success/failure, rail fault, slew limit, angle clamp |
 | `sim/run_tests.sh` | Builds and runs the tests (`g++ -std=c++17`) |
 
-## Design (from `../claw-control-design-2026-10-11.md`)
+## Design (from `claw-control-design-2026-10-11.md`)
 
 Three states on one channel, two thresholds, **no classifier**:
 
@@ -40,7 +40,7 @@ Chatter control is hysteresis only. There is deliberately **no** reject gate
 and **no** majority-vote window: that safety layer costs ~1.95 s of latency
 and buys multi-gesture reliability Phase 1 does not need.
 
-## Wiring assumptions (from `../wiring-schematic.html` — do not improvise)
+## Wiring assumptions (from `wiring-schematic.html` — do not improvise)
 
 - MyoWare 2 + Link Shield: output select switch → **ENV**, ENV → **A0** via
   TRS tip (ring = 5 V, sleeve = GND). MyoWare powered from Arduino 5 V.
