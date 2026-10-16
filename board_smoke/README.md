@@ -1,4 +1,4 @@
-# Board smoke test — Uno + PCA9685 only
+# Board smoke test - Uno + PCA9685 only
 
 A pre-servo stage: prove the controller board and servo driver work
 before anything that can be damaged is connected. The sketch never
@@ -8,7 +8,7 @@ with the PCA9685 wired for logic power only.
 ## What this stage proves
 
 1. The CH340 driver + Arduino IDE can see and program the Uno clone
-   (see the main README's bring-up step 0 — the driver is the known
+   (see the main README's bring-up step 0 - the driver is the known
    board-day trap).
 2. `emg_claw/emg_claw.ino` compiles in the real IDE. Its first compile
    is a verification step, not a formality: only the host-side control
@@ -28,12 +28,12 @@ comes from the Uno.
 Open `board_smoke.ino`, upload it, open Serial Monitor at 9600 baud.
 Pass = `# PCA9685 FOUND at 0x40 - stage 1 PASS` repeating every ~5 s,
 with the built-in LED blinking. Compile `emg_claw.ino` in the IDE at
-this stage too, but do not upload it — without the MyoWare on A0 it
+this stage too, but do not upload it - without the MyoWare on A0 it
 would run a meaningless calibration; a clean compile is the result
 this step is after.
 
 If 0x40 does not answer: re-check wire order and that VCC is actually
-fed, then re-run. Do not troubleshoot past wiring at this stage —
+fed, then re-run. Do not troubleshoot past wiring at this stage -
 nothing else is connected that could be at fault.
 
 ## Not in this stage
