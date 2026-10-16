@@ -1,11 +1,11 @@
-// emg_claw.ino — EMG Hand Phase 1 firmware skeleton.
+// emg_claw.ino - EMG Hand Phase 1 firmware skeleton.
 //
 // Target hardware (per the project wiring schematic, wiring-schematic.html):
 //   Arduino Uno (clone) + MyoWare 2 with Link Shield (ENV -> A0)
 //   PCA9685 servo driver, I2C 0x40 (SDA=A4, SCL=A5), servo channels 0-4
 //   5x SG90 servos on the PCA9685 V+ rail (separate 5 V supply, common GND)
 //
-// Control design: claw-control-design-2026-10-11.md — three states, two
+// Control design: claw-control-design-2026-10-11.md - three states, two
 // thresholds, one channel. All decision logic lives in emg_control.h and is
 // exercised by the simulation tests in ../sim/ before it ever runs here.
 //
@@ -29,7 +29,7 @@
 
 #define EMG_PIN A0            // MyoWare ENV via TRS tip (schematic table)
 #define PCA9685_ADDR 0x40     // schematic: I2C address 0x40
-#define SERVO_PWM_FREQ 50     // Hz — required for SG90 servos
+#define SERVO_PWM_FREQ 50     // Hz - required for SG90 servos
 #define NUM_SERVOS 5          // PCA9685 channels 0..4
 #define BENCH_SINGLE_SERVO 0  // 1 = drive channel 0 only (first bench stage)
 
@@ -120,7 +120,7 @@ void setup() {
   controller.begin(config);
   driveServos(controller.servoAngle());  // park at OPEN before anything else
 
-  Serial.println(F("# EMG claw Phase 1 skeleton — UNCALIBRATED placeholders"));
+  Serial.println(F("# EMG claw Phase 1 skeleton - UNCALIBRATED placeholders"));
   Serial.println(F("# Commands: r = recalibrate, d = dump thresholds"));
   startCalibration();
 }
