@@ -1,4 +1,4 @@
-// emg_control.h — EMG claw control logic, Phase 1.
+// emg_control.h - EMG claw control logic, Phase 1.
 //
 // Pure C++ with no Arduino dependencies so the exact code that ships in the
 // sketch is exercised by the host simulation tests in ../sim/.
@@ -222,7 +222,7 @@ class EmgController {
 //                    the top of the dynamic range.
 // Thresholds are then placed at configured fractions of (flexPeak - baseline).
 // If the separation is too small the calibration FAILS and the controller
-// keeps its default thresholds — a failed calibration must never silently
+// keeps its default thresholds - a failed calibration must never silently
 // produce a twitchy claw. (Schematic fallback if A0 barely moves: turn the
 // MyoWare gain pot clockwise, then recalibrate.)
 // ---------------------------------------------------------------------------
