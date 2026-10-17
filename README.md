@@ -13,12 +13,15 @@ Link Shield) arrives Oct 17, so nothing in this repo has run on real
 hardware yet.
 What was checked, and when: the control logic (`emg_control.h`) was compiled
 with g++ and exercised by 9 host simulation cases / 33 checks, all passing, on
-2026-10-12. The Arduino sketch wrapper (`emg_claw.ino`) has **not** been
-compiled yet: the Arduino AVR core could not be downloaded in the
-host-test environment (TLS failure to the package index), so the sketch's
-first compile happens in the Arduino IDE. The sketch uses only documented
-Adafruit_PWMServoDriver calls, but treat the first IDE compile as a real
-verification step, not a formality. No part of this firmware has run on the
+2026-10-12. The Arduino sketch wrapper (`emg_claw.ino`) received its first compile on
+2026-10-16 (Arduino IDE 2.3.10, Arduino Uno target, by the builder) and
+compiles clean after one fix: `emg_control.h` included `<cstdint>`, which
+the Arduino AVR core does not ship; it now includes `<stdint.h>`, accepted
+by both compilers (host simulation re-run the same day on the builder's
+machine: 33 checks, 0 failures). Compiled size: 11,576 bytes of program
+storage (35% of 32,256) and 679 bytes of dynamic memory (33% of 2,048).
+Still not hardware-validated: nothing has been uploaded or run on the
+board yet. No part of this firmware has run on the
 real MyoWare, Uno, or servos. This banner must be re-earned after board day;
 do not carry it forward on faith.
 
