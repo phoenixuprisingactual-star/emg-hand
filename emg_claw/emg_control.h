@@ -23,7 +23,7 @@
 
 #pragma once
 
-#include <cstdint>
+#include <stdint.h>
 
 struct EmgConfig {
   // --- Signal conditioning -------------------------------------------------
